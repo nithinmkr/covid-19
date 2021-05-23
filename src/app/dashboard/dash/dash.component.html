@@ -1,0 +1,93 @@
+<div class="content">
+
+
+</div>
+
+
+<div class="content">
+    <h1 class="muted">Total <mat-divider fxFlex="1 0"></mat-divider>
+    </h1>
+    <div class="mt20 t-count" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayout.lt-md="column"
+        fxLayoutGap="20px">
+        <mat-card class="custom-card" fxFlex class="">
+            <div class="mat-elevation-z4">
+                <mat-card-header style="justify-content: center">
+                    <mat-card-title>
+                        <h3 class="m-0">Total Cases</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{totalCases | number}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card class="custom-card" fxFlex>
+            <div class="mat-elevation-z4">
+                <mat-card-header style="justify-content: center">
+                    <mat-card-title>
+                        <h3 class="m-0">Total Deaths</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{totalDeaths | number}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card class="custom-card" fxFlex class="">
+            <div class="mat-elevation-z4">
+                <mat-card-header style="justify-content: center">
+                    <mat-card-title>
+                        <h3 class="m-0">Total Recovered</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{totalRecovery | number}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<div class="content ">
+    <h1 class="muted">Today <mat-divider fxFlex="1 0"></mat-divider>
+    </h1>
+    <div class="mt20 t-count" fxLayout="row" fxLayoutAlign="space-between stretch" fxLayout.lt-md="column"
+        fxLayoutGap="20px">
+        <mat-card fxFlex class="">
+            <div class="mat-elevation-z4">
+                <mat-card-header style="justify-content: center">
+                    <mat-card-title>
+                        <h3 class="m-0">Total Cases</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{todayCases | number}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card fxFlex class="">
+            <div class="mat-elevation-z4">
+                <mat-card-header style="justify-content: center">
+                    <mat-card-title>
+                        <h3 class="m-0">Total Deaths</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{todayDeaths | number}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+        <mat-card fxFlex class="">
+            <div class="mat-elevation-z4">
+                <mat-card-header style="justify-content: center">
+                    <mat-card-title>
+                        <h3 class="m-0">Total Recovered</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{todayRecovery | number}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>

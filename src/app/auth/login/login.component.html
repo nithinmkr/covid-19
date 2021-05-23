@@ -1,0 +1,34 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="end center">
+    <mat-card class="box mat-elevation-z8">
+        <mat-card-content>
+            <form class="example-form" [formGroup]="loginForm" (ngSubmit)="formSubmit()">
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <input type="text" matInput placeholder="Username" formControlName="username">
+                        <mat-error *ngIf="submitted && f.username.errors">
+                            <p *ngIf="f.username.hasError('required')">Username is required</p>
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field class="example-full-width">
+                        <input type="password" matInput placeholder="Password" formControlName="password">
+                        <mat-error *ngIf="submitted && f.password.errors">
+                            <p *ngIf="f.password.hasError('required')">Password is required</p>
+                        </mat-error>
+                    </mat-form-field>
+                </p>
+
+                <p *ngIf="errorstring!=''" class="error">
+                    {{ errorstring }}
+                </p>
+
+                <div class="button">
+                    <button mat-stroked-button color="blue" type="submit" mat-button class="btn-block">Login</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

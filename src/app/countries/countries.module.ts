@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CountriesRoutingModule } from './countries-routing.module';
+import { CountryListComponent } from './country-list/country-list.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -13,41 +10,41 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import { CountryEditComponent } from './country-edit/country-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatListModule } from '@angular/material/list';
-import { ErrorInterceptor } from './helpers/interceptor';
-import { DecimalPipe } from '@angular/common';
-
-
-
+import { MillionPipe } from '../helpers/million.pipe';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LayoutComponent,
-    SidebarComponent,
-
+    CountryListComponent,
+    CountryEditComponent,
+    MillionPipe
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
+    CommonModule,
+    CountriesRoutingModule,
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
     MatCardModule,
-    HttpClientModule,
+    MatGridListModule,
+    FlexLayoutModule,
+    MatPaginatorModule,
     MatTableModule,
+    MatTabsModule,
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
@@ -55,9 +52,7 @@ import { DecimalPipe } from '@angular/common';
     FormsModule,
     ReactiveFormsModule,
     MatListModule
-  ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    DecimalPipe],
-  bootstrap: [AppComponent]
+
+  ]
 })
-export class AppModule { }
+export class CountriesModule { }

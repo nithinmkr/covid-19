@@ -1,0 +1,11 @@
+<mat-nav-list>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/dashboard']">
+        <mat-icon class="sidenav-icon">dashboard</mat-icon>
+    </a>
+    <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/country']">
+        <mat-icon class="sidenav-icon">flag</mat-icon>
+    </a>
+    <a mat-list-item (click)="logout()" class="logut-btn">
+        <mat-icon class="sidenav-icon">power_settings_new</mat-icon>
+    </a>
+</mat-nav-list>

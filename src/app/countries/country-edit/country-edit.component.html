@@ -1,0 +1,62 @@
+<div class="content">
+    <h1 class="muted">Edit {{countryname}} <mat-divider fxFlex="1 1 0"></mat-divider>
+    </h1>
+    <div class="edit-page">
+        <form [formGroup]="editForm" (ngSubmit)="formSubmit()" class="edit-form" fxLayout="column">
+            <mat-card fxFlex MatSort class="mat-elevation-z8">
+
+                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px"
+                    fxLayoutGap.lt-md="0px">
+                    <mat-form-field fxFlex>
+                        <input matInput type="text" placeholder="Cases" formControlName="cases">
+                        <mat-error *ngIf="submitted && f.cases.errors">
+                            <p *ngIf="f.cases.hasError('required')">Cases field is required</p>
+                            <p *ngIf="f.cases.hasError('pattern')">Numbers Required</p>
+                        </mat-error>
+                    </mat-form-field>
+
+
+                    <mat-form-field fxFlex>
+                        <input matInput type="text" placeholder="Deaths" formControlName="deaths">
+                        <mat-error *ngIf="submitted && f.cases.errors ">
+                            <p *ngIf="f.deaths.hasError('required')">Deaths field is required</p>
+                            <p *ngIf="f.deaths.hasError('pattern')">Numbers Required</p>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="input-row" fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="20px"
+                    fxLayoutGap.lt-md="0px">
+                    <mat-form-field fxFlex>
+                        <input matInput type="text" placeholder="Recovered" formControlName="recovered">
+                        <mat-error *ngIf="submitted && f.cases.errors ">
+                            <p *ngIf="f.recovered.hasError('required')">Recovered field is required</p>
+                            <p *ngIf="f.recovered.hasError('pattern')">Numbers Required</p>
+                        </mat-error>
+                    </mat-form-field>
+
+
+                    <mat-form-field fxFlex>
+                        <input matInput type="text" placeholder="Tests" formControlName="tests">
+                        <mat-error *ngIf="submitted && f.cases.errors ">
+                            <p *ngIf="f.tests.hasError('required')">Tests field is required</p>
+                            <p *ngIf="f.tests.hasError('pattern')">Numbers Required</p>
+                        </mat-error>
+                    </mat-form-field>
+
+
+                </div>
+
+
+            </mat-card>
+            <div fxLayout="row">
+                <div fxFlexFill class="editbtn">
+                    <button type="button" mat-button color="primary" class="w-100 btn-cancel"
+                        (click)="cancelSubmit()">Cancel</button>
+                    <button type="submit" mat-raised-button class="w-100 btn-submit">Save</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
